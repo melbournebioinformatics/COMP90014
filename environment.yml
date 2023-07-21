@@ -1,0 +1,25 @@
+name: workshops
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - bioconda::blast
+  - bioconda::samtools
+  - python-graphviz
+  - pip:
+      - altair
+      - biopython
+      - graphviz
+      - matplotlib
+      #- nbgrader
+      - networkx
+      - numpy
+      - pandas
+      - pysam
+      - regex
+      - scikit-learn
+      - scipy
+      - seaborn
+      - umap-learn
+      - vega
