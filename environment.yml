@@ -8,18 +8,18 @@ dependencies:
   #- bioconda::samtools
   #- python-graphviz
   - pip:
-      - altair
+      #- altair
       - biopython
       - graphviz
       - matplotlib
       #- nbgrader
-      - networkx
+      #- networkx
       - numpy
       - pandas
-      - pysam
+      #- pysam
       - regex
-      - scikit-learn
+      #- scikit-learn
       - scipy
       - seaborn
-      - umap-learn
-      - vega
+      #- umap-learn
+      #- vega
