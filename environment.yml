@@ -4,9 +4,9 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - bioconda::blast
-  - bioconda::samtools
-  - python-graphviz
+  #- bioconda::blast
+  #- bioconda::samtools
+  #- python-graphviz
   - pip:
       - altair
       - biopython
