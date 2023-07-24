@@ -1,0 +1,8 @@
+adenosis	benign
+fibroadenoma	benign
+phyllodes_tumor	benign
+tubular_adenoma	benign
+ductal_carcinoma	malignant
+lobular_carcinom	malignant
+mucinous_carcinoma	malignant
+papillary_carcinoma	malignant
