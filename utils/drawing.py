@@ -6,8 +6,11 @@ from networkx.drawing.nx_pydot import graphviz_layout
 from typing import Any, Optional
 
 
-def draw_suffix_trie(graph: nx.DiGraph) -> None:
-    fig = plt.figure(1, figsize=(10, 10), dpi=60)
+
+def draw_suffix_trie(graph: nx.DiGraph, title: Optional[str]=None) -> None:
+    fig = plt.figure(1, figsize=(7, 10), dpi=60)
+    if title is not None:
+        plt.title(title, fontsize=20)
     pos = graphviz_layout(graph, prog="dot")
     nx.draw(
         graph, pos, edge_color='black', width=1, linewidths=1,
@@ -19,7 +22,6 @@ def draw_suffix_trie(graph: nx.DiGraph) -> None:
     )
     plt.tight_layout()
     plt.show()  
-    # plt.savefig(filepath, format="PNG")
 
 def draw_travel_undirected(graph: nx.Graph, pos: Any) -> Any:
     fig = plt.figure(1, figsize=(30, 30), dpi=60)
