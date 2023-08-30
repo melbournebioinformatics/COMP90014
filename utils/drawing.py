@@ -22,7 +22,7 @@ def draw_suffix_trie(graph: nx.DiGraph, title: Optional[str]=None) -> None:
     plt.tight_layout()
     plt.show()
 
-def draw_travel_undirected(graph: nx.Graph, pos: Any) -> Any:
+def draw_travel_undirected(graph: nx.Graph, pos: Any=None) -> Any:
     fig = plt.figure(1, figsize=(30, 30), dpi=60)
     if not pos:
         pos = nx.spring_layout(graph, seed=9, k=0.8, iterations=13)  
