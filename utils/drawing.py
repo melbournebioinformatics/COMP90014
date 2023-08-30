@@ -6,7 +6,6 @@ from networkx.drawing.nx_pydot import graphviz_layout
 from typing import Any, Optional
 
 
-
 def draw_suffix_trie(graph: nx.DiGraph, title: Optional[str]=None) -> None:
     fig = plt.figure(1, figsize=(7, 10), dpi=60)
     if title is not None:
@@ -50,20 +49,17 @@ def draw_travel_directed(graph: nx.Graph, pos: Any) -> None:
     plt.tight_layout()
     plt.show()
 
-def draw_evo_tree(graph: nx.DiGraph, iteration: Optional[int]=None) -> None:
-    fig = plt.figure(1, figsize=(10, 10), dpi=60)
-    if iteration is not None:
-        title = f'iteration {iteration}'
-        plt.title(title, fontsize=20)
+def draw_evo_tree(graph: nx.DiGraph) -> None:
+    fig = plt.figure(1, figsize=(7, 7), dpi=60)
     pos = graphviz_layout(graph, prog="dot")
     nx.draw(
         graph, pos, edge_color='black', width=1, linewidths=1,
-        node_size=3000, node_color='pink', alpha=0.9
+        node_size=1500, node_color='pink', alpha=0.9
     )
-    nx.draw_networkx_labels(graph, pos, font_size=25, font_family="sans-serif")
+    nx.draw_networkx_labels(graph, pos, font_size=16, font_family="sans-serif")
     nx.draw_networkx_edge_labels(
-        graph, pos, font_color='red', font_size=20, 
+        graph, pos, font_color='red', font_size=16, 
         edge_labels={e: f"{graph.edges[e]['label']:0.2f}" for e in graph.edges}
     )
-    plt.tight_layout()
     plt.show()
+
