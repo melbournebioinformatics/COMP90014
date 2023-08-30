@@ -21,7 +21,7 @@ def draw_suffix_trie(graph: nx.DiGraph, title: Optional[str]=None) -> None:
         edge_labels={e: graph.edges[e]['label'] for e in graph.edges}
     )
     plt.tight_layout()
-    plt.show()  
+    plt.show()
 
 def draw_travel_undirected(graph: nx.Graph, pos: Any) -> Any:
     fig = plt.figure(1, figsize=(30, 30), dpi=60)
@@ -50,10 +50,11 @@ def draw_travel_directed(graph: nx.Graph, pos: Any) -> None:
     plt.tight_layout()
     plt.show()
 
-def draw_evo_tree(graph: nx.DiGraph, filepath: str, iteration: Optional[int]=None) -> None:
+def draw_evo_tree(graph: nx.DiGraph, iteration: Optional[int]=None) -> None:
+    fig = plt.figure(1, figsize=(10, 10), dpi=60)
     if iteration is not None:
-        filepath = filepath.replace('.png', f'_{iteration}.png')
-    fig = plt.figure(iteration, figsize=(10, 10), dpi=60)
+        title = f'iteration {iteration}'
+        plt.title(title, fontsize=20)
     pos = graphviz_layout(graph, prog="dot")
     nx.draw(
         graph, pos, edge_color='black', width=1, linewidths=1,
@@ -64,4 +65,5 @@ def draw_evo_tree(graph: nx.DiGraph, filepath: str, iteration: Optional[int]=Non
         graph, pos, font_color='red', font_size=20, 
         edge_labels={e: f"{graph.edges[e]['label']:0.2f}" for e in graph.edges}
     )
-    plt.savefig(filepath, format="PNG")
+    plt.tight_layout()
+    plt.show()
