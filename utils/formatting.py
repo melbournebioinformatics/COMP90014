@@ -2,7 +2,7 @@
 import pandas as pd
 
 
-def pretty_print_matrix(the_dict: dict[str, dict[str, float]]) -> None:
+def pretty_print_matrix(the_dict):
     
     # check that this is a dict
     try:

@@ -3,10 +3,9 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 from networkx.drawing.nx_pydot import graphviz_layout
-from typing import Any, Optional
 
 
-def draw_suffix_trie(graph: nx.DiGraph, title: Optional[str]=None) -> None:
+def draw_suffix_trie(graph, title):
     fig = plt.figure(1, figsize=(7, 10), dpi=60)
     if title is not None:
         plt.title(title, fontsize=20)
@@ -22,7 +21,7 @@ def draw_suffix_trie(graph: nx.DiGraph, title: Optional[str]=None) -> None:
     plt.tight_layout()
     plt.show()
 
-def draw_travel_undirected(graph: nx.Graph, pos: Any=None) -> Any:
+def draw_travel_undirected(graph, pos):
     fig = plt.figure(1, figsize=(30, 30), dpi=60)
     if not pos:
         pos = nx.spring_layout(graph, seed=9, k=0.8, iterations=13)  
@@ -37,7 +36,7 @@ def draw_travel_undirected(graph: nx.Graph, pos: Any=None) -> Any:
     plt.show()
     return pos
 
-def draw_travel_directed(graph: nx.Graph, pos: Any) -> None:
+def draw_travel_directed(graph, pos):
     fig = plt.figure(1, figsize=(30, 30), dpi=60)
     nx.draw_networkx_nodes(graph, pos, node_color='white', node_size=25000, edgecolors='black', linewidths=2)
     nx.draw_networkx_edges(graph, pos, width=3, arrows=True, arrowstyle='-|>', arrowsize=50, min_target_margin=80)
@@ -49,7 +48,7 @@ def draw_travel_directed(graph: nx.Graph, pos: Any) -> None:
     plt.tight_layout()
     plt.show()
 
-def draw_evo_tree(graph: nx.DiGraph) -> None:
+def draw_evo_tree(graph):
     fig = plt.figure(1, figsize=(7, 7), dpi=60)
     pos = graphviz_layout(graph, prog="dot")
     nx.draw(
