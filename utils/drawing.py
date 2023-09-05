@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from networkx.drawing.nx_pydot import graphviz_layout
 
 
-def draw_suffix_trie(graph, title):
+def draw_suffix_trie(graph, title=None):
     fig = plt.figure(1, figsize=(7, 10), dpi=60)
     if title is not None:
         plt.title(title, fontsize=20)
