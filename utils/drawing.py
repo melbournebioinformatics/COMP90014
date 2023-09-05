@@ -23,7 +23,7 @@ def draw_suffix_trie(graph, title=None):
 
 def draw_travel_undirected(graph, pos=None):
     fig = plt.figure(1, figsize=(30, 30), dpi=60)
-    if not pos:
+    if pos is None:
         pos = nx.spring_layout(graph, seed=9, k=0.8, iterations=13)  
     nx.draw_networkx_nodes(graph, pos, node_color='white', node_size=25000, edgecolors='black', linewidths=2)
     nx.draw_networkx_edges(graph, pos, width=2)
