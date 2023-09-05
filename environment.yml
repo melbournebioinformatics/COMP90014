@@ -6,14 +6,15 @@ channels:
 dependencies:
   #- bioconda::blast
   #- bioconda::samtools
-  #- python-graphviz
+  - graphviz
   - pip:
       #- altair
       - biopython
-      - graphviz
+      - pygraphviz
+      - pydot
       - matplotlib
       #- nbgrader
-      #- networkx
+      - networkx
       - numpy
       - pandas
       #- pysam
