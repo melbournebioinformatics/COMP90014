@@ -43,22 +43,22 @@ def draw_overlap_graph(graph):
     plt.tight_layout()
     plt.show()
 
-def draw_interval_tree(graph, title):
-    from networkx.drawing.nx_agraph import graphviz_layout  # TODO REMOVE
-    fig = plt.figure(1, figsize=(20, 30), dpi=60)
-    if title is not None:
-        plt.title(title, fontsize=20)
-    pos = graphviz_layout(graph, prog="dot")
-    nx.draw_networkx_nodes(graph, pos, node_color='white', node_size=5000, edgecolors='black', linewidths=2)
-    nx.draw_networkx_edges(graph, pos, width=2)
-    nx.draw_networkx_labels(graph, pos, font_size=25, font_family="sans-serif")
-    nx.draw_networkx_edge_labels(
-        graph, pos, font_color='red', font_size=40, 
-        edge_labels={e: graph.edges[e]['label'] for e in graph.edges}
-    )
-    plt.tight_layout()
-    plt.show()
-    plt.savefig('IST.png') # TODO REMOVE
+# def draw_interval_tree(graph, title):
+#     from networkx.drawing.nx_agraph import graphviz_layout  # TODO REMOVE
+#     fig = plt.figure(1, figsize=(20, 30), dpi=60)
+#     if title is not None:
+#         plt.title(title, fontsize=20)
+#     pos = graphviz_layout(graph, prog="dot")
+#     nx.draw_networkx_nodes(graph, pos, node_color='white', node_size=5000, edgecolors='black', linewidths=2)
+#     nx.draw_networkx_edges(graph, pos, width=2)
+#     nx.draw_networkx_labels(graph, pos, font_size=25, font_family="sans-serif")
+#     nx.draw_networkx_edge_labels(
+#         graph, pos, font_color='red', font_size=40, 
+#         edge_labels={e: graph.edges[e]['label'] for e in graph.edges}
+#     )
+#     plt.tight_layout()
+#     plt.show()
+#     plt.savefig('IST.png') # TODO REMOVE
 
 def segment_plot(segments, title=None):
     colors = cm.rainbow(np.linspace(0, 1, len(segments)))
